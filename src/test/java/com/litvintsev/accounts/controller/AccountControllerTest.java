@@ -86,7 +86,7 @@ class AccountControllerTest {
                 .andExpect(jsonPath("$.lastName", is(requestDto.getLastName())))
                 .andExpect(jsonPath("$.firstName", is(requestDto.getFirstName())))
                 .andExpect(jsonPath("$.middleName", is(requestDto.getMiddleName())))
-                //.andExpect(jsonPath("$.birthDate", is(requestDto.getBirthDate())))
+                .andExpect(jsonPath("$.birthDate").value(requestDto.getBirthDate().toString()))
                 .andExpect(jsonPath("$.birthPlace", is(requestDto.getBirthPlace())))
                 .andExpect(jsonPath("$.passportNumber", is(requestDto.getPassportNumber())))
                 .andExpect(jsonPath("$.phone", is(requestDto.getPhone())))

@@ -113,7 +113,7 @@ class AccountServiceGetMethodTest {
     @DisplayName("Method search(): find different accounts with one query")
     void givenNameShouldReturnPageOfClients() {
 
-        String notExistingEmail = "notExisting@email";
+        String notExistingEmail = "notExisting@email.com";
         PageRequest pageRequest = PageRequest.of(0, 10);
         Page<AccountEntity> page = new PageImpl<>(List.of(entity1, entity2), pageRequest, 10);
         repository.save(entity1);
