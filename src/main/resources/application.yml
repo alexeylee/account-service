@@ -1,0 +1,32 @@
+server:
+  servlet:
+    context-path: /account-service/api
+  port: 8080
+
+spring:
+  application:
+    name: account-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/accounts
+    username: postgres
+    password: example
+    driver-class-name: org.postgresql.Driver
+    name: "accounts-service"
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: false
+  flyway:
+    locations: classpath:db/migration
+    schemas: public
+
+application:
+  # In order to create new validation rules, create new source handler class and add its name here. That's all.
+  sources:
+    handler-map:
+      mail: com.litvintsev.accounts.model.source.MailSource
+      mobile: com.litvintsev.accounts.model.source.MobileSource
+      bank: com.litvintsev.accounts.model.source.BankSource
+      gosuslugi: com.litvintsev.accounts.model.source.GosuslugiSource
+
+

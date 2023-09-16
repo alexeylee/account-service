@@ -1,0 +1,11 @@
+
+application:
+  # In order to create new validation rules, create new source handler class and add its name here. That's all.
+  sources:
+    handler-map:
+      mail: com.litvintsev.accounts.model.source.MailSource
+      mobile: com.litvintsev.accounts.model.source.MobileSource
+      bank: com.litvintsev.accounts.model.source.BankSource
+      gosuslugi: com.litvintsev.accounts.model.source.GosuslugiSource
+
+
