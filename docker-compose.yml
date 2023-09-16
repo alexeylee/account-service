@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   backend:
-    image: client:0.0.1
+    image: accounts-service
     build:
       context: .
       dockerfile: Dockerfile

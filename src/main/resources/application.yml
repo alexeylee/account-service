@@ -3,6 +3,15 @@ server:
     context-path: /account-service/api
   port: 8080
 
+management:
+  endpoint:
+    info:
+      enabled: true
+    metrics:
+      enabled: true
+    health:
+      show-details: always
+
 spring:
   application:
     name: account-service
