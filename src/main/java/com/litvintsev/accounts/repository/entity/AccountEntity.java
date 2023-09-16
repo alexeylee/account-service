@@ -3,12 +3,8 @@ package com.litvintsev.accounts.repository.entity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.Type;
-
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.UUID;
 
 @Entity
 @Getter

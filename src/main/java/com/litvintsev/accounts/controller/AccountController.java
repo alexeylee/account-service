@@ -4,8 +4,6 @@ import com.litvintsev.accounts.dto.AccountDto;
 import com.litvintsev.accounts.model.AccountFilter;
 import com.litvintsev.accounts.service.AccountService;
 import lombok.RequiredArgsConstructor;
-import org.hibernate.exception.ConstraintViolationException;
-import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;

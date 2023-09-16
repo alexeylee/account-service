@@ -1,7 +1,6 @@
 package com.litvintsev.accounts.model.source;
 
 import com.litvintsev.accounts.dto.AccountDto;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
