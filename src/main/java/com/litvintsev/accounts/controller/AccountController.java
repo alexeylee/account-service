@@ -4,6 +4,8 @@ import com.litvintsev.accounts.dto.AccountDto;
 import com.litvintsev.accounts.model.AccountFilter;
 import com.litvintsev.accounts.service.AccountService;
 import lombok.RequiredArgsConstructor;
+import org.hibernate.exception.ConstraintViolationException;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -38,7 +40,7 @@ public class AccountController {
         return ResponseEntity.ok(account);
     }
 
-    //TODO use custom PageResponse class insted of Page
+    //TODO use custom PageResponse class instead of Page
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Page<AccountDto>> search(
             @RequestParam(defaultValue = "0") int page,

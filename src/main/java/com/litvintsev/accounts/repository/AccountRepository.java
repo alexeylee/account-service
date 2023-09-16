@@ -24,10 +24,10 @@ public interface AccountRepository extends PagingAndSortingRepository<AccountEnt
 
     @Query("""
         select a from AccountEntity a
-        where (:bankId is null or lower(a.bankId) = lower(:bankId))
-            or (:passport is null or a.passportNumber = :passport)
-            or (:phone is null or a.phone = :phone)
-            or (:email is null or lower(a.email) = lower(:email))
+        where lower(a.bankId) = lower(coalesce(:bankId, ''))
+            or a.passportNumber = coalesce(:passport, '')
+            or a.phone = coalesce(:phone, '')
+            or lower(a.email) = lower(coalesce(:email, ''))
     """)
     List<AccountEntity> findByUniqueParameters(String bankId, String passport, String phone, String email);
 }

@@ -47,7 +47,7 @@ class AccountServiceCreateMethodTest {
     private static final String BANK_ID_ERROR = "Bank ID is not set";
     private static final String ADDRESS_ERROR = "Address of registration is not set";
     private static final String INVALID_SOURCE = "Can not validate input parameters. Invalid source application: unknown";
-    private static final String ALREADY_EXISTS = "Client with one of the same unique parameters already exists.";
+    private static final String ALREADY_EXISTS = "Client with one of the same unique parameters already exists: bankId, passport number, phone, email.";
 
     @Mock
     private AccountRepository repository;

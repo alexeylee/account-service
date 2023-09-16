@@ -21,7 +21,6 @@ import java.util.UUID;
 
 import static com.litvintsev.accounts.utils.Converter.*;
 
-
 @Service
 @RequiredArgsConstructor
 public class AccountServiceImpl implements AccountService{
@@ -40,7 +39,8 @@ public class AccountServiceImpl implements AccountService{
         List<AccountEntity> existingAccounts = repository.findByUniqueParameters(
                 account.getBankId(), account.getPassportNumber(), account.getPhone(), account.getEmail());
         if (!existingAccounts.isEmpty())
-            throw new AlreadyExistsException("Client with one of the same unique parameters already exists.");
+            throw new AlreadyExistsException("Client with one of the same unique parameters already exists: " +
+                    "bankId, passport number, phone, email.");
 
         AccountEntity persistedAccount = repository.save(toEntity(account));
         return toDto(persistedAccount);
