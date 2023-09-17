@@ -39,6 +39,7 @@ public class AccountController {
     }
 
     //TODO use custom PageResponse class instead of Page
+    //TODO implement sorting parameters
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Page<AccountDto>> search(
             @RequestParam(defaultValue = "0") int page,
@@ -61,5 +62,5 @@ public class AccountController {
         Page<AccountDto> accounts = accountService.search(filter, paging);
         return ResponseEntity.ok(accounts);
     }
-    //TODO implement POST search method with filter DTO
+    //TODO alternatively implement POST search method with filter DTO
 }
